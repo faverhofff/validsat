@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE5B7BBF-71D8-4895-ACC6-8ACC1D1AFA6A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ValidSAT</RootNamespace>
+    <AssemblyName>ValidSAT</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.6.9.9\lib\net40\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.Entity.6.9.9\lib\net40\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\BussinesModel.cs" />
+    <Compile Include="Classes\CEmail.cs" />
+    <Compile Include="Classes\ControlDB.cs" />
+    <Compile Include="Classes\Global.cs" />
+    <Compile Include="Classes\Helper.cs" />
+    <Compile Include="Classes\MessageBox.cs" />
+    <Compile Include="Classes\RegexMatchTimeoutException.cs" />
+    <Compile Include="Classes\RfcExistsException.cs" />
+    <Compile Include="Classes\SecurityClass.cs" />
+    <Compile Include="Classes\ValidationException.cs" />
+    <Compile Include="Context\validsatEntities.cs" />
+    <Compile Include="Controles\ButtonSalirdeCaptura.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ButtonSalirdeCaptura.Designer.cs">
+      <DependentUpon>ButtonSalirdeCaptura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ButtonGuardarDatos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ButtonGuardarDatos.Designer.cs">
+      <DependentUpon>ButtonGuardarDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\buttonIniciarDescarga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\buttonIniciarDescarga.Designer.cs">
+      <DependentUpon>buttonIniciarDescarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Grid_RFC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Grid_RFC.Designer.cs">
+      <DependentUpon>Grid_RFC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\LollipopTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\LollipopToggle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\MaterialTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\Switch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Switch.Designer.cs">
+      <DependentUpon>Switch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\CMailServers.cs" />
+    <Compile Include="DataAccess\cnf_codigospostales.cs" />
+    <Compile Include="DataAccess\cnf_rfcadministrados.cs" />
+    <Compile Include="DataAccess\DBConnect.cs" />
+    <Compile Include="DataAccess\Entity.cs" />
+    <Compile Include="Dialogs2\frmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs2\frmDialog.Designer.cs">
+      <DependentUpon>frmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs2\frmFullScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs2\frmFullScreen.Designer.cs">
+      <DependentUpon>frmFullScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMainLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMainLogin.Designer.cs">
+      <DependentUpon>frmMainLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\cnf_empresas.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI Actions\DescargarXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Actions\frmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Managers\DrawHelper.cs" />
+    <Compile Include="UI Managers\FontManager.cs" />
+    <EmbeddedResource Include="Controles\ButtonSalirdeCaptura.resx">
+      <DependentUpon>ButtonSalirdeCaptura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ButtonGuardarDatos.resx">
+      <DependentUpon>ButtonGuardarDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\buttonIniciarDescarga.resx">
+      <DependentUpon>buttonIniciarDescarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Grid_RFC.resx">
+      <DependentUpon>Grid_RFC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\LollipopTextBox.resx">
+      <DependentUpon>LollipopTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Switch.resx">
+      <DependentUpon>Switch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs2\frmDialog.resx">
+      <DependentUpon>frmDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs2\frmFullScreen.resx">
+      <DependentUpon>frmFullScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMainLogin.resx">
+      <DependentUpon>frmMainLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Images\Roboto-Medium.ttf" />
+    <None Include="Images\Roboto-Regular.ttf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ingresar-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\salir-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ingresar-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\salir-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\validsat-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\login-form.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\mainmenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icobtn5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ValidSAT-UI-Design-WideScreen_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ValidSAT-UI-Design-WideScreen_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ValidSAT-UI-Design-WideScreen_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ValidSAT-UI-Design-WideScreen_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ValidSAT-UI-Design-WideScreen_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ValidSAT-UI-Design-WideScreen_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ValidSAT-UI-Design-WideScreen_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ValidSAT-UI-Design-WideScreen_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\combobox_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\separator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\vertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\separator2-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b-1-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b-1-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b-1-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b-2-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b-2-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\a1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ncircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\salir-data-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\sel-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\switch-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\salir-data-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\salida-data-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\salida-data-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b-3-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\b-3-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\a0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\a0on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\a2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\a2on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\a1_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\a1on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\a0_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\folder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\_a_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\folder-on.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

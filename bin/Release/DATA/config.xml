@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>
+    <add key="a1" value="hello"/>
+    <add key="a2" value="1234506"/>
+    <add key="a3" value="there"/>
+</configuration>
